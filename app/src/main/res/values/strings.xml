@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Travel Expenses</string>
+    <string name="pt_distance">Distância</string>
+    <string name="pt_total_distance">Distância Total</string>
+    <string name="pt_price">Preço</string>
+    <string name="pt_price_per_liter">Preço por Litro</string>
+    <string name="pt_autonomy">Autonomia</string>
+    <string name="pt_km_per_liter">km por Litro</string>
+    <string name="pt_result_description">Seu gasto será de:</string>
+    <string name="br_price_value">R$ 0</string>
+    <string name="pt_calculate">Calcular</string>
 </resources>

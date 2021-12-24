@@ -7,7 +7,9 @@
     <string name="pt_autonomy">Autonomia</string>
     <string name="pt_km_per_liter">km por Litro</string>
     <string name="pt_result_description">Seu gasto será de:</string>
-    <string name="br_price_value">R$ %1$.2f</string>
+    <string name="br_price_value">R$ %1$s</string>
     <string name="pt_calculate">Calcular</string>
-    <string name="testToast">Test Successful</string>
+    <string name="pt_null_value">todos os campos devem ser preenchidos</string>
+    <string name="pt_negative_value">Os valores devem ser maiores que zero</string>
+    <string name="pt_unespected_error">erro inesperado</string>
 </resources>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.nilsonsasaki.travelexpenses.databinding.ActivityMainBinding
+import com.nilsonsasaki.travelexpenses.models.TravelValues
 import com.nilsonsasaki.travelexpenses.viewmodels.TravelExpensesViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -16,13 +17,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvResult.text = getString(R.string.br_price_value,0.00)
+        binding.tvResult.text = getString(R.string.br_price_value, "0.00")
 
-        viewModel.travelValues.observe(this,{ newValue->
-            binding.etDistance.setText(newValue.distance.toString())
-            binding.etPrice.setText(newValue.gasPrice.toString())
-            binding.etAutonomy.setText(newValue.autonomy.toString())
-            binding.tvResult.text = getString(R.string.br_price_value,newValue.travelCost)
+        viewModel.travelValues.observe(this, { newValue ->
+            binding.etDistance.setText(newValue.distance)
+            binding.etPrice.setText(newValue.gasPrice)
+            binding.etAutonomy.setText(newValue.autonomy)
+            binding.tvResult.text = getString(R.string.br_price_value, newValue.travelCost)
 
         })
 
@@ -34,8 +35,14 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.btCalculate.setOnClickListener {
-            viewModel.validationToast()
+            viewModel.calculateExpenses(
+                TravelValues(
+                    binding.etDistance.text.toString(),
+                    binding.etPrice.text.toString(),
+                    binding.etAutonomy.text.toString(),
+                    "0.00"
+                )
+            )
         }
-
     }
 }
